@@ -2,42 +2,65 @@
 <html lang="en" ng-app='myApp'>
   <head>
     <meta charset="utf-8">
-    <title>Untitled</title>
+    <title>Rock, Paper, Scissors</title>
     
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway:600' rel='stylesheet' type='text/css'>
     
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
-    <!-- sample angular code -->
+    <h1>Rock, Paper, Scissors</h1>
     <div class="container">
       <div ng-controller="myController">
 
+        <div class="row">
           <div ng-model="choice">
-           <!--  <button value="" selected disabled="">Please Select</button> -->
-            <button type="button" ng-click="howToWin('rock')">Rock</button>
-            <button type="button" ng-click="howToWin('paper')">Paper</button>
-            <button type="button" ng-click="howToWin('scissors')">Scissors</button>
+            <div class="col-sm-4">
+              <button type="button" ng-click="howToWin('rock')" ><img ng-src="http://clipartzebraz.com/cliparts/rocks-clipart/cliparti1_rocks-clipart_04.jpg"></button>
+            </div>
+            <div class="col-sm-4">
+              <button type="button" ng-click="howToWin('paper')"><img ng-src="http://images.clipartpanda.com/paper-clipart-eiMyezain.png"></button>
+            </div>
+            <div class="col-sm-4">
+              <button type="button" ng-click="howToWin('scissors')"><img ng-src="http://www.clipartbest.com/cliparts/xTg/oqy/xTgoqyyLc.png"></button>
+            </div>
           </div>
+        </div>
+        <br>
           
-          <button type="button" class="btn btn-primary" ng-click="reset()">Reset</button>
-
-        <div>
-          <div>
-            <p>The computer chose: {{computerChoice}}</p>
+        <div class="row" id="score">
+          <div class="col-sm-6">
+            <p>Your Score: {{win}}</p>
           </div>
-          <div>
-            <p>You chose: {{choice}}</p>
-          </div>
-          <div>
-            <p>{{message}}</p>
+          <div class="col-sm-6">
+            <p>Computer Score: {{lose}}</p>
           </div>
         </div>
 
-        <div>
-          <p>Win: {{win}}</p>
-          <p>Lose: {{lose}}</p>
+        <div id="message">
+          <p>{{message}}</p>
         </div>
+
+          
+        <div id="playerSymbol">
+          <div class="row">
+            <div class="col-sm-6">
+              <h2>You chose: {{choice}}</h2>
+            </div>
+            <div class="col-sm-6">
+              <h2>The computer chose: {{computerChoice}}</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <button id="reset" type="button" class="btn btn-danger btn-lg" ng-click="reset()">Reset</button>
+        </div>
+
+
+        
 
       </div>
     </div>
