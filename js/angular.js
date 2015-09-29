@@ -2,11 +2,12 @@
 
 var app = angular.module('myApp', []);
 
-app.controller('myController', function($scope) {
+app.controller('myController', function($scope, $timeout) {
    
    $scope.win = 0;
    $scope.lose = 0;
    $scope.message = "";
+   $scope.symbolMessage = false;
    
 
    $scope.computer = function() {
@@ -47,6 +48,15 @@ app.controller('myController', function($scope) {
    	$scope.choice = "";
    	$scope.computerChoice = "";
    	$scope.message = "";
+      $scope.symbolMessage = false;
    };
+
+   $scope.showMessage = function() {
+      $scope.symbolMessage = true;
+   };
+
+   // $scope.fade = function() {
+   //    $timeout(showMessage, 3000);
+   // };
 
 });

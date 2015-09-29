@@ -15,33 +15,32 @@
     <div class="container">
       <div ng-controller="myController">
 
-        <div class="container">
-          <div class="row">
-            <div col-sm-3>
-              <button id="reset" type="button" class="btn btn-danger btn-lg" ng-click="reset()">Reset</button>
-              <h1>Rock, Paper, Scissors</h1>
-              <h3>(Click picture to make selection)</h3> 
-            </div>
+        <!-- header and reset button -->
+        <div class="row">
+          <div col-sm-3>
+            <button id="reset" type="button" class="btn btn-danger btn-lg" ng-click="reset()">Reset</button>
+            <h1>Rock, Paper, Scissors</h1>
+            <h3>(Click picture to make selection)</h3> 
           </div>
         </div>
-
-    
-
+        
+        <!-- buttons with pictures -->
         <div class="row">
           <div ng-model="choice">
             <div class="col-sm-4">
-              <button type="button" ng-click="howToWin('rock')" ><img ng-src="http://clipartzebraz.com/cliparts/rocks-clipart/cliparti1_rocks-clipart_04.jpg"></button>
+              <button type="button" ng-click="howToWin('rock'); showMessage()" ><img ng-src="http://clipartzebraz.com/cliparts/rocks-clipart/cliparti1_rocks-clipart_04.jpg"></button>
             </div>
             <div class="col-sm-4">
-              <button type="button" ng-click="howToWin('paper')"><img ng-src="http://images.clipartpanda.com/paper-clipart-eiMyezain.png"></button>
+              <button type="button" ng-click="howToWin('paper'); showMessage()"><img ng-src="http://images.clipartpanda.com/paper-clipart-eiMyezain.png"></button>
             </div>
             <div class="col-sm-4">
-              <button type="button" ng-click="howToWin('scissors')"><img ng-src="http://www.clipartbest.com/cliparts/xTg/oqy/xTgoqyyLc.png"></button>
+              <button type="button" ng-click="howToWin('scissors'); showMessage()"><img ng-src="http://www.clipartbest.com/cliparts/xTg/oqy/xTgoqyyLc.png"></button>
             </div>
           </div>
         </div>
         <br>
           
+        <!-- score -->
         <div class="row" id="score">
           <div class="col-sm-6">
             <p>Your Score: {{win}}</p>
@@ -51,33 +50,25 @@
           </div>
         </div>
 
+        <!-- message that tells who won -->
         <div id="message">
           <p>{{message}}</p>
         </div>
     
-        <div id="playerSymbol">
-          <div class="row">
-           
+        <!-- message that tells what each chose -->
+        <div id="playerSymbol" ng-show="symbolMessage">
+          <div class="row"> 
             <div class="col-sm-6">
-              <h2>You chose:</h2>
-              <h2>{{choice}}</h2>
+              <h2>You chose: <strong>{{choice | uppercase}}</strong></h2>
             </div>
             <div class="col-sm-6">
-              <h2>The computer chose:</h2>
-              <h2>{{computerChoice}}</h2>
+              <h2>Computer chose: <strong>{{computerChoice | uppercase}}</strong></h2>
             </div>
           </div>
         </div>
 
-       <!--  <div class="row">
-          
-        </div> -->
-
-
-        
-
-      </div>
-    </div>
+      </div> <!-- close controller -->
+    </div> <!-- close container -->
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     
