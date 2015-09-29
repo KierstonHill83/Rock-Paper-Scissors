@@ -2,7 +2,7 @@
 
 var app = angular.module('myApp', []);
 
-app.controller('myController', function($scope, $timeout) {
+app.controller('myController', function($scope) {
    
    $scope.win = 0;
    $scope.lose = 0;
@@ -51,12 +51,9 @@ app.controller('myController', function($scope, $timeout) {
       $scope.symbolMessage = false;
    };
 
+
    $scope.showMessage = function() {
       $scope.symbolMessage = true;
    };
-
-   // $scope.fade = function() {
-   //    $timeout(showMessage, 3000);
-   // };
 
 });
