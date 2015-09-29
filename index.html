@@ -11,9 +11,21 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
-    <h1>Rock, Paper, Scissors</h1>
+
     <div class="container">
       <div ng-controller="myController">
+
+        <div class="container">
+          <div class="row">
+            <div col-sm-3>
+              <button id="reset" type="button" class="btn btn-danger btn-lg" ng-click="reset()">Reset</button>
+              <h1>Rock, Paper, Scissors</h1>
+              <h3>(Click picture to make selection)</h3> 
+            </div>
+          </div>
+        </div>
+
+    
 
         <div class="row">
           <div ng-model="choice">
@@ -42,22 +54,24 @@
         <div id="message">
           <p>{{message}}</p>
         </div>
-
-          
+    
         <div id="playerSymbol">
           <div class="row">
+           
             <div class="col-sm-6">
-              <h2>You chose: {{choice}}</h2>
+              <h2>You chose:</h2>
+              <h2>{{choice}}</h2>
             </div>
             <div class="col-sm-6">
-              <h2>The computer chose: {{computerChoice}}</h2>
+              <h2>The computer chose:</h2>
+              <h2>{{computerChoice}}</h2>
             </div>
           </div>
         </div>
 
-        <div class="row">
-          <button id="reset" type="button" class="btn btn-danger btn-lg" ng-click="reset()">Reset</button>
-        </div>
+       <!--  <div class="row">
+          
+        </div> -->
 
 
         

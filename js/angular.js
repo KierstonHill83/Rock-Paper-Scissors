@@ -42,11 +42,11 @@ app.controller('myController', function($scope) {
 
    $scope.reset = function() {
    	console.log("test");
-   	$scope.win = 0,
-   	$scope.lose = 0
-   	$scope.choice = "",
-   	$scope.computerChoice = "",
-   	$scope.message = ""
+   	$scope.win = 0;
+   	$scope.lose = 0;
+   	$scope.choice = "";
+   	$scope.computerChoice = "";
+   	$scope.message = "";
    };
 
 });
